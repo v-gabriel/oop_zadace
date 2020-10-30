@@ -15,9 +15,6 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-//  _      _      _
-//>(.)__ <(.)__ =(.)__
-// (___/  (___/  (___/  hjw
 
 			int i;
 			Episode ep1, ep2;
@@ -42,3 +39,8 @@ namespace ConsoleApp
 		}
     }
 }
+
+
+//  _      _      _
+//>(.)__ <(.)__ =(.)__
+// (___/  (___/  (___/  hjw

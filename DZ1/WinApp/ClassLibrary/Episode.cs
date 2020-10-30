@@ -6,9 +6,9 @@ namespace ClassLibrary
     {
 
                        
-            int viewers;
-            double score_sum;
-            double max_score;
+            private int viewers; //total viewers of an episode 
+            private double score_sum; //total sum of all scores per viewer
+            private double max_score; //maximum score traced from all the viewer scores
 
 
 
@@ -23,7 +23,7 @@ namespace ClassLibrary
             max_score = max_score_;
         }
 
-        // getters & setters
+                                    // getters & setters //
 
         //adding viewers without score(as if they all voted 0)
         public void AddView(int views)
@@ -32,7 +32,7 @@ namespace ClassLibrary
        
         }
 
-        //adds a viewer, his score, adds his max score and the total score
+        //adds a viewer and his score; keeps track of max score and the total score
         public void AddView(double score) 
         { this.viewers += 1;
             if (score > max_score)
@@ -42,7 +42,7 @@ namespace ClassLibrary
         }
 
             public double GetMaxScore()
-        { return max_score; }
+            { return max_score; }
 
             public int GetViewerCount()
             { return this.viewers;  }
