@@ -1,0 +1,89 @@
+﻿# Zadaća 2 - Stringovi i operatori
+
+## Zadatak
+
+U sustav za upravljanje epizodama TV serija trebate dodati klasu koja predstavlja opis epizode s podacima
+za broj epizode, trajanje epizode (struktura TimeSpan) te naziv epizode. U klasu koja predstavlja epizodu
+iz Zadaće 1 trebate kao atribut dodati još i referencu netom dodanog tipa za opis epizode. Implementirajte 
+sve potrebne klase, njihove metode, kao i pomoćne statičke metode unutar klase "TvUtilities" kako bi se testni
+program u nastavku mogao ispravno izvesti (u klasu TvUtilities premjestite i generiranje nasumične ocjene iz zadaće 1).
+Kod sortiranja koristiti odgovarajući preopterećeni operator (uspoređuje se prema prosječnoj ocjeni epizode),
+a kod ispisa preopterećenu "ToString()" metodu. Sortirati silazno korištenjem operatora za usporedbu.
+
+## Pravila
+
+* Koristiti programski jezik C#
+* Svaka klasa ide u zaseban file
+* Kreirati dva projekta unutar solutiona, jedan koji će biti definiran kao *class library* i u kojem će biti logika rješenja, a drugi koji će biti konzolna aplikacija i koji će predstavljati UI
+* Koristiti .NET Core projekte u VS-u
+* Uploadati rješenje na Github, na privatni repozitorij
+* Zalijepiti link na repozitorij za predaju zadaće
+* Nakon isteka roka za zadaću učiniti repozitorij javnim
+* Prepisivanje je strogo zabranjeno i bit će kažnjavano
+
+## Testni program
+
+```c#
+	Description description = new Description(1, TimeSpan.FromMinutes(45), "Pilot");
+	Console.WriteLine(description);
+	Episode episode = new Episode(10, 88.64, 9.78, description);
+	Console.WriteLine(episode);
+
+	// Assume that the number of rows in the text file is always at least 10. 
+	// Assume a valid input file.
+	string fileName = "shows.tv";
+	string[] episodesInputs = File.ReadAllLines(fileName);
+	Episode[] episodes = new Episode[episodesInputs.Length];
+	for (int i = 0; i < episodes.Length; i++)
+	{
+		episodes[i] = TvUtilities.Parse(episodesInputs[i]);
+	}
+
+	Console.WriteLine("Episodes:");
+	Console.WriteLine(string.Join<Episode>(Environment.NewLine, episodes));
+	TvUtilities.Sort(episodes);
+	Console.WriteLine("Sorted episodes:");
+    string sortedEpisodesOutput = string.Join<Episode>(Environment.NewLine, episodes);
+	Console.WriteLine(sortedEpisodesOutput);
+	File.WriteAllText("sorted.tv", sortedEpisodesOutput);
+```
+
+## Primjer ulazne datoteke
+```
+10,70.18,9.85,11,00:45:00,Pilot
+10,79.33,9.89,12,00:45:00,Paternity
+10,78.88,8.77,13,00:45:00,Occam's Razor
+10,69.69,9.38,14,00:45:00,Maternity
+10,77.95,9.82,15,00:45:00,Damned If You Do
+10,75.88,9.33,16,00:45:00,The Socratic Method
+10,74.91,9.46,17,00:45:00,Fidelity
+10,69.44,9.78,18,00:45:00,Poison
+10,72.34,8.54,19,00:45:00,DNR
+10,69.22,9.47,110,00:45:00,Histories
+```
+
+## Primjer izlaza
+	1,00:45:00,Pilot
+	10,88.64,9.78,1,00:45:00,Pilot
+	Episodes:
+	10,70.18,9.85,11,00:45:00,Pilot
+	10,79.33,9.89,12,00:45:00,Paternity
+	10,78.88,8.77,13,00:45:00,Occam's Razor
+	10,69.69,9.38,14,00:45:00,Maternity
+	10,77.95,9.82,15,00:45:00,Damned If You Do
+	10,75.88,9.33,16,00:45:00,The Socratic Method
+	10,74.91,9.46,17,00:45:00,Fidelity
+	10,69.44,9.78,18,00:45:00,Poison
+	10,72.34,8.54,19,00:45:00,DNR
+	10,69.22,9.47,110,00:45:00,Histories
+	Sorted episodes:
+	10,79.33,9.89,12,00:45:00,Paternity
+	10,78.88,8.77,13,00:45:00,Occam's Razor
+	10,77.95,9.82,15,00:45:00,Damned If You Do
+	10,75.88,9.33,16,00:45:00,The Socratic Method
+	10,74.91,9.46,17,00:45:00,Fidelity
+	10,72.34,8.54,19,00:45:00,DNR
+	10,70.18,9.85,11,00:45:00,Pilot
+	10,69.69,9.38,14,00:45:00,Maternity
+	10,69.44,9.78,18,00:45:00,Poison
+	10,69.22,9.47,110,00:45:00,Histories
