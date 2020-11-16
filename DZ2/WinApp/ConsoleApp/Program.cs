@@ -16,7 +16,7 @@ namespace ConsoleApp
 
 			// Assume that the number of rows in the text file is always at least 10. 
 			// Assume a valid input file.
-			string fileName = "shows.tv.txt";
+			string fileName = "shows.tv";
 			
 			string[] episodesInputs = File.ReadAllLines(fileName);
 			Episode[] episodes = new Episode[episodesInputs.Length];
