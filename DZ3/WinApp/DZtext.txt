@@ -1,0 +1,101 @@
+﻿# Zadaća 3 - Odnosi i polimorfizam
+
+## Zadatak
+
+U sustav za upravljanje epizodama TV serija trebate dodati klasu koja predstavlja sezonu,
+a koja omogućuje čuvanje epizoda uporabom dinamički alociranog polja.
+Omogućiti pristup epizodama unutar sezone preko indeksa.
+Omogućiti ispis korištenjem sučelja IPrinter s dvije konkretne implementacije, konzolnom i datotečnom.
+Implementirajte sve potrebne klase i njihove metode kako bi se testni program u nastavku mogao ispravno izvesti.
+
+## Pravila
+
+* Koristiti programski jezik C#
+* Svaka klasa ide u zaseban file
+* Kreirati dva projekta unutar solutiona, jedan koji će biti definiran kao *class library* i u kojem će biti logika rješenja, a drugi koji će biti konzolna aplikacija i koji će predstavljati UI
+* Koristiti .NET Core projekte u VS-u
+* Uploadati rješenje na Github, na privatni repozitorij
+* Zalijepiti link na repozitorij za predaju zadaće
+* Nakon isteka roka za zadaću učiniti repozitorij javnim
+* Prepisivanje je strogo zabranjeno i bit će kažnjavano
+
+## Testni program
+
+```c#
+	// Assume that the number of rows in the text file is always at least 10. 
+	// Assume a valid input file.
+	string fileName = "shows.tv";
+	string outputFileName = "storage.tv";
+
+	IPrinter printer = new ConsolePrinter();
+	printer.Print($"Reading data from file {fileName}");
+
+	Episode[] episodes = TvUtilities.LoadEpisodesFromFile(fileName);
+	Season season = new Season(1, episodes);
+
+	printer.Print(season.ToString());
+	for (int i = 0; i < season.Length; i++)
+	{
+		season[i].AddView(TvUtilities.GenerateRandomScore());
+	}
+	printer.Print(season.ToString());
+
+	printer = new FilePrinter(outputFileName);
+	printer.Print(season.ToString());	
+```
+
+## Primjer ulazne datoteke
+
+```
+10,70.18,9.85,11,45,Pilot
+10,79.33,9.89,12,45,Paternity
+10,78.88,8.77,13,45,Occam's Razor
+10,69.69,9.38,14,45,Maternity
+10,77.95,9.82,15,45,Damned If You Do
+10,75.88,9.33,16,45,The Socratic Method
+10,74.91,9.46,17,45,Fidelity
+10,69.44,9.78,18,45,Poison
+10,72.34,8.54,19,45,DNR
+10,69.22,9.47,110,45,Histories
+```
+
+## Primjer izlaza
+
+```
+Reading data from file shows.tv
+Season 1:
+=================================================
+10,70.18,9.85,11,00:45:00,Pilot
+10,79.33,9.89,12,00:45:00,Paternity
+10,78.88,8.77,13,00:45:00,Occam's Razor
+10,69.69,9.38,14,00:45:00,Maternity
+10,77.95,9.82,15,00:45:00,Damned If You Do
+10,75.88,9.33,16,00:45:00,The Socratic Method
+10,74.91,9.46,17,00:45:00,Fidelity
+10,69.44,9.78,18,00:45:00,Poison
+10,72.34,8.54,19,00:45:00,DNR
+10,69.22,9.47,110,00:45:00,Histories
+Report:
+=================================================
+Total viewers: 100
+Total duration: 07:30:00
+=================================================
+
+Season 1:
+=================================================
+11,79.0909,9.85,11,00:45:00,Pilot
+11,86.8369,9.89,12,00:45:00,Paternity
+11,81.8123,8.77,13,00:45:00,Occam's Razor
+11,77.0557,9.38,14,00:45:00,Maternity
+11,85.4209,9.82,15,00:45:00,Damned If You Do
+11,78.8583,9.33,16,00:45:00,The Socratic Method
+11,77.6567,9.46,17,00:45:00,Fidelity
+11,74.2774,9.78,18,00:45:00,Poison
+11,77.9955,8.54,19,00:45:00,DNR
+11,75.0055,9.47,110,00:45:00,Histories
+Report:
+=================================================
+Total viewers: 110
+Total duration: 07:30:00
+=================================================
+```
