@@ -1,9 +1,0 @@
-C:\Users\GABRIEL\Desktop\OOP homework\DZ5x\WPFapp\CSLibrary\bin\Debug\netstandard2.0\CSLibrary.deps.json
-C:\Users\GABRIEL\Desktop\OOP homework\DZ5x\WPFapp\CSLibrary\bin\Debug\netstandard2.0\CSLibrary.dll
-C:\Users\GABRIEL\Desktop\OOP homework\DZ5x\WPFapp\CSLibrary\bin\Debug\netstandard2.0\CSLibrary.pdb
-C:\Users\GABRIEL\Desktop\OOP homework\DZ5x\WPFapp\CSLibrary\obj\Debug\netstandard2.0\CSLibrary.csprojAssemblyReference.cache
-C:\Users\GABRIEL\Desktop\OOP homework\DZ5x\WPFapp\CSLibrary\obj\Debug\netstandard2.0\CSLibrary.AssemblyInfoInputs.cache
-C:\Users\GABRIEL\Desktop\OOP homework\DZ5x\WPFapp\CSLibrary\obj\Debug\netstandard2.0\CSLibrary.AssemblyInfo.cs
-C:\Users\GABRIEL\Desktop\OOP homework\DZ5x\WPFapp\CSLibrary\obj\Debug\netstandard2.0\CSLibrary.csproj.CoreCompileInputs.cache
-C:\Users\GABRIEL\Desktop\OOP homework\DZ5x\WPFapp\CSLibrary\obj\Debug\netstandard2.0\CSLibrary.dll
-C:\Users\GABRIEL\Desktop\OOP homework\DZ5x\WPFapp\CSLibrary\obj\Debug\netstandard2.0\CSLibrary.pdb
