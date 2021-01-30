@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ehhb+HXmT/yDN6i4mTMmqc585f5kxgW75Z5NsNWQrg5M0iP+cxLkIUQY9TrIErAqJ9zw3GcFp7IlNqkH0jWOiA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\GABRIEL\\Desktop\\OOP homework\\DZ5x\\WPFapp\\App\\App.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\GABRIEL\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

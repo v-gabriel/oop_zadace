@@ -1,0 +1,26 @@
+﻿# Zadaća 5 - Izrada jednostavne aplikacije u programskom jeziku C#
+
+## Zadatak
+
+Korištenjem programskog jezika C# i Windows presentation foundation biblioteke ostvariti programsko rješenje za pretragu i prikaz informacija o TV serijama.
+Za dobivanje podataka koristiti TV Maze API (http://www.tvmaze.com/api ).
+S obzirom da API podatke daje u JSON transportnom formatu, koristiti prikladnu biblioteku za konverziju, primjerice Json.NET (https://www.newtonsoft.com/json).
+Nužne funkcionalnosti:
+
+* Pretraga serija po imenu
+* Prikaz informacija o odabranoj seriji
+* Prikaz sezona odabrane serije
+* Prikaz epizoda odabrane sezone za odabranu seriju
+
+Izgled korisničkog sučelja, dodatne funkcionalnosti (npr. baza podataka, informacije o glumcima, favoriti i sl.) prepušteni su na izbor.
+Zadatak je moguće riješiti i drugim načinima, primjerice QT framework i C++, WPF i C#.
+
+## Pravila
+
+* Koristiti programski jezik C#
+* Svaka klasa ide u zaseban file
+* Koristiti .NET framework  projekte u VS-u (WPF app)
+* Uploadati rješenje na Github, na privatni repozitorij
+* Zalijepiti link na repozitorij za predaju zadaće
+* Nakon isteka roka za zadaću učiniti repozitorij javnim
+* Prepisivanje je strogo zabranjeno i bit će kažnjavano
